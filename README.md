@@ -40,6 +40,10 @@ Right now, this repository supports 2D object detection and human pose estimatio
     docker run --runtime=nvidia -v $PWD:/keras-centernet -w /keras-centernet -it --rm keras_centernet:latest
     ```
 
+    with display:
+    ``` 
+    docker run --runtime=nvidia -v $PWD:/keras-centernet -w /keras-centernet -it --rm --env=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw keras_centernet:latest
+    ```
 4. Run CenterNet on an image:
     ```
     PYTHONPATH=. python keras_centernet/bin/ctdet_image.py --fn assets/demo2.jpg --inres 512,512
